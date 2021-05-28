@@ -5,7 +5,9 @@
   type: remote_run
   service: web-codeship-example-node # our command will run on an instance of the `app` service that we've defined in the `codeship-services.yml` file
   command: npm run lint
+  label: foo
 - name: tests
   type: remote_run
   service: web-codeship-example-node
   command: /bin/sh -c "npm run migrate && npm test -- --forceExit" # bash wrapper not required unless passing along env variables or combining commands
+  label: foo
