@@ -9,7 +9,7 @@ web-codeship-example-node:
   cached: true
   remote: true
 testpg:
-  image: healthcheck/postgres:alpine
+  image: postgres:alpine
   environment:
     POSTGRES_USER: todoapp
     POSTGRES_DB: todos
