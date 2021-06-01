@@ -3,14 +3,16 @@
 web-codeship-example-node:
   build: .
   links:
-    - postgres
+    - testpg
   environment:
-    DATABASE_URL: "postgres://todoapp@postgres/todos"
+    DATABASE_URL: "postgres://todoapp@testpg:5432/todos"
   cached: true
   remote: true
-postgres:
+testpg:
   image: healthcheck/postgres:alpine
   environment:
     POSTGRES_USER: todoapp
     POSTGRES_DB: todos
   remote: true
+  ports:
+    - 5434:5432
