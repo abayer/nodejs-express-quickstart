@@ -11,8 +11,9 @@ web-codeship-example-node:
 testpg:
   image: postgres:alpine
   environment:
-    POSTGRES_USER: todoapp
-    POSTGRES_DB: todos
+    - POSTGRES_USER=todoapp
+    - POSTGRES_DB=todos
+    - POSTGRES_HOST_AUTH_METHOD=trust
   remote: true
   ports:
     - 5434:5432
